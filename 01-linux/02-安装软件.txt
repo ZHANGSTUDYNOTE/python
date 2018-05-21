@@ -106,3 +106,8 @@
     5、sudo /etc/init.d/mysql stop
     6、sudo /etc/init.d/mysql start
     7、完成修改
+    8、关于Mysql5.7高版本group by新特性报错
+    找到my.cnf，编辑它~把以下命令放到合适位置，重启mysql 服务，OK~报错没啦~
+    [mysqld]
+    #sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+
