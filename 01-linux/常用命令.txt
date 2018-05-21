@@ -19,7 +19,7 @@
 	16-查找文件：find -name "*name*"
 	17-打包/解包：tar -zcvf test.tar.gz *.txt/tar -zxvf test.tar.gz   【指定路径：-C /test】
 	             tar -jcvf test.tar.bz2 *.txt/tar -jxvf test.tar.bz2
-	             zip test.zip *.txt/unzip test.zip
+	             zip test.zip *.txt/unzip test.zip
 
 
 二、其它：
