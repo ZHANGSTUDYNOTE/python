@@ -1,4 +1,4 @@
-一、IO操作：
+一、IO操作1：
     0-管道: cat /目录 | grep 名
 	1-当前目录路径：pwd
 	2-创建文件：touch test.txt
