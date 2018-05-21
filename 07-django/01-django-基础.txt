@@ -1,0 +1,50 @@
+一、环境配置与启动
+
+    1、安装
+        pip install Django==2.0.5
+
+    2、查看环境中的包：
+        pip list
+        pip freeze
+
+    3、创建项目
+        django-admin startproject test
+
+    4、创建应用【在一个项目中可以创建一到多个应用，每个应用进行一种业务处理】
+        python manage.py startapp booktest
+
+    5、生成迁移文件：根据模型类生成sql语句
+      python manage.py makemigrations
+
+    6、执行迁移：执行sql语句生成数据表
+      python manage.py migrate
+
+    7、启动项目
+    python manage.py runserver 8080
+
+
+二、基本配置
+
+    1、应用添加：INSTALLED_APPS
+
+    2、静态资源文件：
+                STATIC_URL = '/static/'
+                STATICFILES_DIRS = [
+                    os.path.join(BASE_DIR, 'static'),
+                ]
+
+    3、模板：设置TEMPLATES的DIRS值 'DIRS': [os.path.join(BASE_DIR, 'templates')],
+
+    4、数据库【mysql】：需要 pip install mysqlclient
+                DATABASES = {
+                    'default': {
+                        'ENGINE': 'django.db.backends.mysql',
+                        'NAME': 'b_fresh',
+                        'HOST': '192.168.229.131',
+                        'PORT': 3306,
+                        'USER': 'root',
+                        'PASSWORD': 'a123456',
+                    }
+                }
+
+    5、url: 如对应用的添加 path('userInfo/', include('userInfo.urls')),

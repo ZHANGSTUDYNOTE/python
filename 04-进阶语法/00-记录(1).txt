@@ -1,0 +1,32 @@
+ 1-判断是否同一个引用：is  如：a is b   【如在-5~126是特殊引用 变量引用地址一样】
+
+ 2-引用私有化（名字重整）：开头带_ 如： _xxx 或 __xxx  【本质是：名字重整，作用范围：from test import *】
+
+ 3-生成器（占用空间小）：a = (x for x in range(10))  next(a)
+
+ 3-迭代器：可以被next()调用并返回下一个值的；iter(a)可以将字符串、列表转成迭代器
+
+ 4-闭包：定义在一个函数内部的函数“。在本质上，闭包是将函数内部和函数外部连接起来的桥梁。
+        注意：闭包一但创建函数将不会被销毁
+
+ 5-装饰器：在回调函数自动传入函数作为参数，如：@func 写在传入函数名上面
+
+ 6-作用域：LEGB规则 locals(当前命名空间 )-->enclising function-->globals(全局变量)-->builtins(内建)
+
+ 7-限制属性：__slots__
+
+ 8-调试：pdb-->python -m pdb test.py
+        l->list(当前代码) n->next(向下执行一段代码) c->continue(继续执行代码) b 8->break(第8行添加断点) clear 1->(清除断点)
+        p a->(a参数值) s->step(进入函数) a->args(打印所有形参数据) q->quit退出 r->return(执行到函数的最后一行)
+        或：import pdb pdb.run('test(a,b)')   pdb.set_trace() #直接调试
+
+ 9-代码规范：pep8
+
+ 10-全局解释器锁：GIL  【线程实际是虚拟，可以通过调用 C语言写的代码 或 使用进程提高效率】
+
+ 11-tcp/ip协议：
+    tcp：传输控制协议（稳定）
+    udp: 用户数据包协议（不稳定 ）
+    struct-->请求
+
+ 12-协程插件：gevent
