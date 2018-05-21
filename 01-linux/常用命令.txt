@@ -1,0 +1,78 @@
+一、IO操作：
+    0-管道: cat /目录 | grep 名
+	1-当前目录路径：pwd
+	2-创建文件：touch test.txt
+	3-创建文件夹：mkdir -p（自动创建）
+	4-查看：ls、ls [-a（全部） -l（列显示） -h（大小单位k）]
+	5-自动保全：tab键
+	6-查看历史操作记录：history
+	7-通配符：*  ?  正则[] 如：ls t*、 ls t?st.txt
+	8-重定向（把应该展示在屏幕的信息写入到文件中）:>（覆盖） >>（追加）  如：ls > test.log
+	9-切换目录：cd  -（返回  上次目录）  ~（家目录）
+	10-结构：tree
+	11-删除：rm -r（删除文件夹，包括文件夹中文件或文件夹）
+	12-重命名：mv
+	13-连接方式：in -s 1.txt 2.txt （软连接）、 in 1.txt 2.txt （硬连接）
+	14-合并文件：cat 1.txt 2.txt > 1-2-all.txt
+	15-搜索内容：grep -n "test" test.txt
+
+	16-查找文件：find -name "*name*"
+	17-打包/解包：tar -zcvf test.tar.gz *.txt/tar -zxvf test.tar.gz   【指定路径：-C /test】
+	             tar -jcvf test.tar.bz2 *.txt/tar -jxvf test.tar.bz2
+	             zip test.zip *.txt/unzip test.zip
+
+
+二、其它：
+    1-查看日历：cal -y 2018
+    2-时间：date
+    3-进程：ps -auxr  /  top   关闭进程：kill -9 1234
+    4-查看硬盘信息：df -h       当前目录：du -h
+
+
+三、用户
+    1-创建用户：sudo useradd 帐户名 -m
+    2-创建/修改密码：sudo passwd 帐号名
+    3-切换帐户：su 帐号名
+    4-查看当前用户：whoami   查看链接数：who
+    5-用户组：sudo groupadd 组名              查看所有组：groupmod [tab]
+    6-添加管理员权限：sudo usermod -a G- amd 用户名  &&  sudo usermod -a G- sudo 用户名
+    7-权限：chmod [u g o]    数字法(1~7组合)：r=4,w=2,x=1   chmod 137 文件名
+
+
+四、vi/vim
+    1-进入编辑（插入模式）：a,A,i,I,o,O
+    2-复制：yy【当前一行】 4yy【当前光标以下4行】
+    3-粘贴：p
+    4-剪切：dd【当前一行】 4dd【当前光标以下4行】 D【当前光标后面】 d0【当前光标的前面】 X/x【往前/往后删除当前光标一个】
+    5-位置：h【左】 j【下】 k【上】 l【右】
+           H【当前屏幕的上方】 M【当前屏幕的中间】 L【当前屏幕的下方】
+
+           ctrl+f--->向下翻一页代码
+           ctrl+b--->向上翻一页代码
+
+           ctrl+d--->向下翻半页代码
+           ctrl+u--->向上翻半页代码
+
+           20G--->定位到20行；G--->定位到最后一行；gg--->定位到第一行
+           w--->向后跳到下一个单词的开始处；b--->向前跳到前一个单词处
+
+           u--->撤销；ctrl+r--->反撤销
+
+           选中：V/v
+
+           移到：>> <<
+
+           重复上一次命令：.
+
+           替换：r--->替换光标一个字符     R--->替换光标以及后面的字符   %s/原来内容/替换内容/
+
+           查找：/查找内容     n--->下一处；N--->上一处
+
+           shif + zz
+
+五、服务
+    1、centos7开启80端口（centos的防火墙改成了firewall,不再叫iptables,开放端口的方法如下：）
+        设置：firewall-cmd --zone=public --add-port=80/tcp --permanent
+        关闭：systemctl stop firewalld.service
+        启动：systemctl start firewalld.service
+
