@@ -111,3 +111,9 @@
     [mysqld]
     #sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
 
+
+六、Ubuntu18.04 VMwareTools安装方法
+    1、在桌面打开挂载的DVD盘，选择 VMwareTools-10.2.0-7259539.tar.gz 复制到主文件夹的主目录中
+    2、解压：tar -zxvf VMwareTools-10.2.0-7259539.tar.gz
+    3、执行安装文件：sudo ./vmware-install.pl
+    4、，见到yes，就输入yes。其他的就一路回车按（Enter）。如果遇到失败的情况，可以快捷键 ctrl+z 退出后，重新执行安装文件即可。
