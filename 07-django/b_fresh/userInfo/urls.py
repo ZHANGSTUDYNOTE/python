@@ -3,4 +3,5 @@ from . import views
 
 urlpatterns = [
     path('register/', views.register),
+    path('data/register.json/', views.registerData),
 ]
