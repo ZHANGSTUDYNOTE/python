@@ -1,0 +1,8 @@
+一、HTTP内置模块
+
+1、使用模块：urllib.request
+
+2、Handler处理器
+
+
+
