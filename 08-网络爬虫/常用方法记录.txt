@@ -1,0 +1,25 @@
+一、HTTP内置模块
+
+代理站点
+西刺免费代理IP http://www.xicidaili.com/
+快代理免费代理 https://www.kuaidaili.com/free/inha/
+
+1、使用模块：urllib.request
+
+
+2、Handler处理器
+
+
+3、Requests: 让 HTTP 服务人类
+    开源地址：https://github.com/kennethreitz/requests
+    中文文档： API： http://docs.python-requests.org/zh_CN/latest/index.html
+
+    安装方式
+    利用 pip 安装 或者利用 easy_install 都可以完成安装：
+
+    pip install requests
+
+    easy_install requests
+
+
+
