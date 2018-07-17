@@ -1,1 +1,71 @@
-指定执行：/bin/sh test1.sh
+一、指定执行：/bin/sh test1.sh
+
+
+二、工具使用
+1、grep     =>      Linux中grep是强大的正则文本搜索工具 Global Regular Expression Print
+grep 'error' *.log  #从当前目录下log文件中查找有error的行
+[options]常用参数：
+-c：只输出匹配行的计数。
+-i：不区分大小写。
+-h：查询多文件时不显示文件名。
+-l：查询多文件时只输出包含匹配字符的文件名。
+-n：显示匹配行及 行号。
+-s：不显示不存在或无匹配文本的错误信息。
+-v：显示不包含匹配文本的所有行。
+--color=auto ：可以将找到的关键词部分加上颜色的显示。
+
+2、find     =>      Linux文件系统查找工具
+常用参数：
+-name   按照文件名查找文件。
+-perm   按照文件权限来查找文件。
+-prune  使用这一选项可以使find命令不在当前指定的目录中查找，如果同时使用-depth选项，那么-prune将被find命令忽略。
+-user   按照文件属主来查找文件。
+-group  按照文件所属的组来查找文件。
+-mtime -n +n 按照文件的更改时间来查找文件，-n表示文件更改时间距现在n天以内，+n表示文件更改时间距现在n天以前。find命令还有-atime和-ctime 选项，但它们都和-m time选项。
+-nogroup 查找无有效所属组的文件，即该文件所属的组在/etc/groups中不存在。
+-nouser 查找无有效属主的文件，即该文件的属主在/etc/passwd中不存在。
+-newer file1 ! file2 查找更改时间比文件file1新但比文件file2旧的文件。
+-type   查找某一类型的文件，诸如：
+    b - 块设备文件。
+    d - 目录。
+    c - 字符设备文件。
+    p - 管道文件。
+    l - 符号链接文件。
+    f - 普通文件。
+-size n：[c] 查找文件长度为n块的文件，带有c时表示文件长度以字节计。
+-depth   在查找文件时，首先查找当前目录中的文件，然后再在其子目录中查找。
+-fstype  查找位于某一类型文件系统中的文件，这些文件系统类型通常可以在配置文件/etc/fstab中找到，该配置文件中包含了本系统中有关文件系统的信息。
+-mount   在查找文件时不跨越文件系统mount点。
+-follow  如果find命令遇到符号链接文件，就跟踪至链接所指向的文件。
+
+find命令的参数；
+pathname: find命令所查找的目录路径。例如用.来表示当前目录，用/来表示系统根目录，递归查找。
+-print： find命令将匹配的文件输出到标准输出。
+-exec： find命令对匹配的文件执行该参数所给出的shell命令。相应命令的形式为'command' {  } \;，注意{   }和\；之间的空格。
+-ok： 和-exec的作用相同，只不过以一种更为安全的模式来执行该参数所给出的shell命令，在执行每一个命令之前，都会给出提示，让用户来确定是否执行。
+
+xargs       =>      xargs - build and execute command lines from standard input
+find命令把匹配到的文件传递给xargs命令，而xargs命令每次只获取一部分文件而不是全部，不像-exec选项那样。这样它可以先处理最先获取的一部分文件，然后是下一批，并如此继续下去。
+
+3、sed      =>      流编辑器,行操作（Stream Editor）
+常用参数：
+--version            显示sed版本。
+--help               显示帮助文档。
+-n,--quiet,--silent  静默输出，默认情况下，sed程序在所有的脚本指令执行完毕后，将自动打印模式空间中的内容，这些选项可以屏蔽自动打印。
+-e script            允许多个脚本指令被执行。
+-f script-file, 
+--file=script-file   从文件中读取脚本指令，对编写自动脚本程序来说很棒！
+-i,--in-place        直接修改源文件，经过脚本指令处理后的内容将被输出至源文件（源文件被修改）慎用！
+-l N, --line-length=N 该选项指定l指令可以输出的行长度，l指令用于输出非打印字符。
+--posix             禁用GNU sed扩展功能。
+-r, --regexp-extended  在脚本指令中使用扩展正则表达式
+-s, --separate      默认情况下，sed将把命令行指定的多个文件名作为一个长的连续的输入流。而GNU sed则允许把他们当作单独的文件，这样如正则表达式则不进行跨文件匹配。
+-u, --unbuffered    最低限度的缓存输入与输出。
+
+常用的脚本指令操作：
+a,append        追加
+i,insert        插入
+d,delete        删除
+s,substitution  替换
+
+4、awk      =>      sed以行为单位处理文件，awk比sed强的地方在于不仅能以行为单位还能以列为单位处理文件。
