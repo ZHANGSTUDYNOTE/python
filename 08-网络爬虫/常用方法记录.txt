@@ -23,3 +23,15 @@
 
 
 
+二、scrapy 框架  官方文档：https://docs.scrapy.org/en/latest/
+
+1、安装：pip安装=> pip install scrapy    conda安装=> conda install -c conda-forge scrapy
+Windows系统建议使用Anaconda或Miniconda并使用conda - forge通道中的软件包 ，这样可以避免大多数安装问题。
+
+2、创建项目： scrapy startproject tutorial
+
+3、运行：   scrapy crawl quotes
+
+
+
+
